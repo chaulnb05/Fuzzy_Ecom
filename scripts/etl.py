@@ -3,7 +3,10 @@ import glob
 import os
 
 def run_etl(input_folder:str,output_folder:str) -> pd.DataFrame:
-    """ Run etl pipeline
+    """ Run the ETL pipeline:
+        - Extract raw data fromt he input file
+        - Transform the raw data
+        - Load processed data into an output folder
 
     Args:
         input_folder (str): name of input data folder
@@ -44,4 +47,4 @@ def run_etl(input_folder:str,output_folder:str) -> pd.DataFrame:
         print(f"Loading {file_name} to /{output_folder}")
 
 if __name__ == "__main__":
-    run_etl("raw_data", "processed_data")
+    run_etl("data/raw_data", "data/processed_data")
