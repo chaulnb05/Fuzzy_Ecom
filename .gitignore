@@ -1,5 +1,4 @@
 raw_data/
-fuzzy/
 processed_data/
 .venv/
 .DS_Store
