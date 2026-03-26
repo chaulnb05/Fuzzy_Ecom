@@ -2,3 +2,4 @@ raw_data/
 processed_data/
 .venv/
 .DS_Store
+*.pyc
