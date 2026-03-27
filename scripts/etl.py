@@ -37,6 +37,7 @@ def run_etl(input_folder:str,output_folder:str) -> pd.DataFrame:
             df['day'] = df['created_at'].dt.day
             df['month'] = df['created_at'].dt.month
             df['month_name'] = df['created_at'].dt.month_name()
+            df['date'] = df['created_at'].dt.date
 
         # Load:
         if not os.path.exists(output_folder):
