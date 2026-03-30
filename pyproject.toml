@@ -14,6 +14,7 @@ dependencies = [
     "decorator==5.2.1",
     "executing==2.2.1",
     "fonttools==4.61.1",
+    "imblearn>=0.0",
     "ipykernel==7.2.0",
     "ipython==9.11.0",
     "ipython-pygments-lexers==1.1.1",
