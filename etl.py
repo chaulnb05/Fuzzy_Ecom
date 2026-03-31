@@ -2,6 +2,24 @@ import pandas as pd
 import glob
 import os
 
+def extract_date(df):
+    if "created_at" in df.columns:
+            df['created_at'] = pd.to_datetime(df['created_at'])
+            df['hour'] = df['created_at'].dt.hour
+            df['week_day'] = df['created_at'].dt.dayofweek
+            df['week_day_name'] = df['created_at'].dt.day_name()
+            df['day'] = df['created_at'].dt.day
+            df['month'] = df['created_at'].dt.month
+            df['month_name'] = df['created_at'].dt.month_name()
+            df['date'] = df['created_at'].dt.date
+            df["year"] = df['created_at'].dt.year
+    return df
+
+def impute_missing(df):
+     df = df.fillna("unknown")
+     return df
+
+
 def run_etl(input_folder:str,output_folder:str) -> pd.DataFrame:
     """ Run the ETL pipeline:
         - Extract raw data fromt he input file
@@ -27,18 +45,9 @@ def run_etl(input_folder:str,output_folder:str) -> pd.DataFrame:
 
         # Transform:
         # Replace null/missing values with "Unknown"
-        df = df.fillna("unknown")
+        df = impute_missing(df)
         # Extract time elements
-        if "created_at" in df.columns:
-            df['created_at'] = pd.to_datetime(df['created_at'])
-            df['hour'] = df['created_at'].dt.hour
-            df['week_day'] = df['created_at'].dt.dayofweek
-            df['week_day_name'] = df['created_at'].dt.day_name()
-            df['day'] = df['created_at'].dt.day
-            df['month'] = df['created_at'].dt.month
-            df['month_name'] = df['created_at'].dt.month_name()
-            df['date'] = df['created_at'].dt.date
-            df["year"] = df['created_at'].dt.year
+        df = extract_date(df)
 
         # Load:
         if not os.path.exists(output_folder):
