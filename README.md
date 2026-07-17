@@ -3,8 +3,7 @@
 ## ✨ Summary 
 This is an end-to-end data project that analyzes customer behavior of an e-commerce business and predict their purchase intent. It includes a ETL pipeline, RFM-based customer segmentation, and a conversion propensity model that could detect 83% of high-intent sessions and achieved a 2.35x increase in targeting effectiveness. The project also includes a PowerBI dashboard for operational data and website traffic analysis monitoring.
 
-![Uploading Untitled presentation.jpg…]()
-
+![PowerBI Dashboard](powerbi.jpg)
 
 ## 🎯 Project Objective
 The main objective of this project is to use raw e-commerce websession data to identiy which web sessions are most likely to convert into a real purchase. By identifying high-value customers and predicting which web sessions are likely to convert, businesses can optimize marketing budget and improve targeting efficiency.
